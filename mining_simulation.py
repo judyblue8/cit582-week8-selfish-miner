@@ -15,22 +15,6 @@ def Simulate(alpha,gamma,N, seed):
     # the revenue of the selfish mining pool
     SelfishRevenue=0
 
-    #A round begin when the state=0
-    for i in range(N):
-        r=random.random()
-        if state==0:
-            #The selfish pool has 0 hidden block.
-            if r<=alpha:
-                #The selfish pool mines a block.
-                #They don't publish it. 
-                state=1
-            else:
-                #The honest miners found a block.
-                #The round is finished : the honest miners found 1 block
-                # and the selfish miners found 0 block.
-                ChainLength+=1
-                state=0
-
         elif state==1:
             #The selfish pool has 1 hidden block.
             if r<=alpha:
